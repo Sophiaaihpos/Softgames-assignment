@@ -6,20 +6,19 @@ import TerserPlugin from "terser-webpack-plugin";
 
 export default (_env, argv) => {
   return {
-    stats: "minimal", // Keep console output easy to read.
-    entry: "./src/main.ts", // Your program entry point
+    stats: "minimal", 
+    entry: "./src/main.ts", 
 
-    // Your build destination
     output: {
       path: path.resolve(process.cwd(), "dist"),
       filename: "bundle.js",
       clean: true,
+      publicPath: "/Softgames-assignment/",
     },
 
-    // Config for your testing server
     devServer: {
       compress: true,
-      allowedHosts: "all", // If you are using WebpackDevServer as your production server, please fix this line!
+      allowedHosts: "all", 
       static: false,
       client: {
         logging: "warn",
@@ -33,13 +32,10 @@ export default (_env, argv) => {
       host: "0.0.0.0",
     },
 
-    // Web games are bigger than pages, disable the warnings that our game is too big.
     performance: { hints: false },
 
-    // Enable sourcemaps while debugging
     devtool: argv.mode === "development" ? "eval-source-map" : undefined,
 
-    // Minify the code when making a final build
     optimization: {
       minimize: argv.mode === "production",
       minimizer: [
@@ -53,7 +49,6 @@ export default (_env, argv) => {
       ],
     },
 
-    // Explain webpack how to do Typescript
     module: {
       rules: [
         {
@@ -68,12 +63,10 @@ export default (_env, argv) => {
     },
 
     plugins: [
-      // Copy our static assets to the final build
       new CopyPlugin({
         patterns: [{ from: "public/" }],
       }),
 
-      // Make an index.html from the template
       new HtmlWebpackPlugin({
         template: "./index.html",
         hash: true,
