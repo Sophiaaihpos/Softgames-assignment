@@ -1,6 +1,6 @@
 import * as PIXI from 'pixi.js';
 import { BackButton } from '../shared/ui/BackButton';
-import { FPSCounter } from '../utils/FPSCounter';
+import { FPSCounter } from '../utils/FpsCounter';
 import { getLayout } from '../utils/Responsive';
 
 export abstract class BaseScene extends PIXI.Container {
