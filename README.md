@@ -5,7 +5,8 @@ Live demo: **[https://sophiasigethy.github.io/Softgames-assignment/](https://sop
 
 ---
 
-## 📋 Table of Contents
+##
+Table of Contents
 
 - [Overview](#overview)
 - [Tech Stack](#tech-stack)
