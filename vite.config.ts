@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/softgames-assessment/", 
+  base: "/softgames-assessment/",
   build: {
     outDir: "dist",
   },
